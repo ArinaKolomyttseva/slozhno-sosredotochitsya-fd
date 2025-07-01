@@ -3,6 +3,11 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--decor-color);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .header__rec {
   display: flex;
@@ -96,14 +101,6 @@ h1 {
 
 .header__text {
   block-size: fit-content;
-}
-
-.page {
-  background-image: var(--bg-image);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .decorated-zone {
@@ -258,6 +255,8 @@ a:focus-visible {
 
   .gallery__wrapper {
     gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 192px auto 318px;
   }
 
   .header__rec {
@@ -267,11 +266,6 @@ a:focus-visible {
   h1,
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .gallery__wrapper {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 192px auto 318px;
   }
 
   .gallery__img {
