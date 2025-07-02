@@ -20,7 +20,7 @@
 .header__rec::before {
   content: "REC";
   color: var(--rec-color);
-  margin-right: var(--section-padding-left);
+  margin-right: 10px;
   line-height: 25px;
 }
 
@@ -34,8 +34,7 @@
   border-radius: 50%;
 }
 
-h1,
-.footer__title {
+.large-text {
   /* Для мобильных */
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -45,7 +44,7 @@ h1,
   font-weight: var(--bold-fw);
 }
 
-h1 {
+.h1 {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -60,6 +59,7 @@ h1 {
   padding: 0 13px;
   color: var(--menu-color);
   height: 26px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -139,11 +139,15 @@ h1 {
   color: var(--section-title-color);
   font-weight: var(--bold-fw);
   margin-bottom: 20px;
+  font-size: var(--main-fs);
 }
 
 .reasons {
   padding-top: 40px;
-  gap: 20px;
+}
+
+.reasons__list-item-text:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .concentration {
@@ -164,34 +168,35 @@ h1 {
   gap: 20px;
 }
 
-.advice {
+.section-two-columns {
   gap: 20px;
 }
 
 .subtitle {
   margin-bottom: 10px;
+  font-size: var(--main-fs);
 }
 
-a {
+.link {
   text-decoration: none;
   text-shadow: var(--accent-color) 2px 2px;
 }
 
-a:hover {
+.link:hover {
   border-bottom: 1px solid var(--main-color);
 }
 
-a:focus {
+.link:focus {
   outline: none;
   border: none;
 }
 
-a:focus-visible {
+.link:focus-visible {
   border: 1px solid var(--main-color);
 }
 
 .advice__list-item-title {
-  font-weight: var(--base-fw);
+  font-weight: var(--main-fw);
 }
 
 .advice__subtitle {
@@ -231,22 +236,32 @@ a:focus-visible {
 }
 
 @media (min-width: 768px) {
+  .h1 {
+    br {
+      display: none;
+    }
+  }
+
   .header__text {
-    inline-size: calc(50% - var(--section-padding-left));
+    inline-size: 50%;
     justify-self: end;
   }
 
-  .reasons {
+  .section-two-columns {
     grid-template-columns: 1fr 2fr;
-    padding-top: 60px;
   }
 
-  .advice {
-    grid-template-columns: 1fr 2fr;
+
+  .reasons {
+    padding-top: 60px;
   }
 
   .section {
     padding: 40px 20px;
+  }
+
+  .section.reasons {
+    padding-top: 60px;
   }
 
   .gallery__title {
@@ -263,8 +278,7 @@ a:focus-visible {
     right: 29px;
   }
 
-  h1,
-  .footer__title {
+  .large-text {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -296,6 +310,10 @@ a:focus-visible {
   .img5 {
     grid-row: 3 / 4;
     grid-column: 2 / 4;
+  }
+
+  .gallery {
+    padding-bottom: 60px;
   }
 }
 
